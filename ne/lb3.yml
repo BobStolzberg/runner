@@ -19,7 +19,7 @@
   tasks:
     - name: Create Loadbalancer named Mustang
       clc_loadbalancer:
-        name: Turtle
+        name: Turtle3
         alias: RUNC
         location: UC1
         description: Shared Loadbalancer for distributing data
@@ -53,7 +53,7 @@
       clc_loadbalancer:
         alias: RUNC
         location: UC1
-        name: Turtle
+        name: Turtle2
         description: testlb1
         state:  nodes_present
         port: 80
