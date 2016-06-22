@@ -1,0 +1,21 @@
+- name: Create load balancer on a data center
+  hosts: localhost
+  gather_facts: False
+  connection: local
+  tasks:
+    - name: create load balancer
+      clc_loadbalancer:
+        alias: RUNC
+        location: FILLMEIN
+        name: FILLMEIN
+        description: FILLMEIN
+        state:  present
+        port: 80
+        nodes:
+          - {'ipAddress': 'PRIVATE_IP1', 'privatePort': 11}
+          - {'ipAddress': 'PRIVATE_IP2', 'privatePort': 22}
+      register: clc
+        server_ids: "{{ item.name }}"
+        state: present
+      with_flattened: MY.servers
+      register: clc
